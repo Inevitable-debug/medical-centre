@@ -1,0 +1,11 @@
+select.form-control.times {
+    width: 130px;
+}
+
+select.form-control.reason {
+    width: 175px;
+}
+
+textarea.form-control.advice {
+    width: 250px;
+}

@@ -1,0 +1,367 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(#FFDA1F, #00aaff);
+    font-family: 'Poppins', sans-serif;
+    color: #333333;
+    margin: 0; 
+}
+
+body {
+    color: #333333;
+}
+
+/* Navigation */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    padding: 10px 0; 
+}
+
+nav ul li a {
+    display: inline-block;
+    position: relative; 
+    color: black;
+    text-decoration: none;
+    padding: 10px 25px;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    color: rgb(47, 159, 167);
+}
+
+nav ul li a::after {
+    display: block;
+    width: 0;
+    height: 2.5px;
+    position: absolute;
+    bottom: 7px;
+    left: 50%; 
+    content: '';
+    background: #00527A;
+    transition: 500ms;
+    transform: translateX(-50%); 
+}
+
+nav ul li a:hover::after {
+    width: 70%;
+}
+
+/* Table */
+table {
+    margin: 30px auto;
+    border-collapse: collapse;
+    box-shadow: 0 0 5px rgba(119, 115, 115, 0.1);
+    width: 80%; 
+    border: 3px double rgba(0, 82, 122, 0.7);
+}
+
+table th, table td {
+    padding: 18px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+table th {
+    background-color: #00527A;
+    color: yellow;
+}
+
+/* Main Content */
+main {
+    padding: 1em 20%;
+}
+
+main p {
+    font-size: 20px;
+}
+
+main h1, main h2 {
+    text-shadow: 1px 1px 2px #000040;
+}
+
+main h1 {
+    font-size: 36px; 
+    text-align: center;
+}
+
+main h2 {
+    font-size: 30px; 
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+#staff h2 {
+    text-align: center;
+}
+
+main img {
+    display: block;
+    margin: 0 auto 20px; 
+    border-radius: 12px;
+    border: 3px dotted #00527A;
+}
+
+article figure {
+    text-align: center;
+    font-weight: 700;
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    display: none; /* Hide the error message by default */
+    margin-top: 5px;
+}
+
+#staff article {
+    margin-bottom: 4em;
+}
+
+/* Form Section */
+form {
+    margin-top: 4em;
+}
+
+form input:focus, form textarea:focus {
+    background-color: #00AAFF; /* Use #00AAFF when focused */
+    color: white;
+    outline: none;
+}
+
+form input, form textarea, form select {
+    width: 80%;
+    padding: 15px;
+    border-radius: 6px;
+    margin: 0 0 1em 4em;
+    background-color: #FFD400; 
+    color: #333333;
+    border: none;
+    font-size: 18px;
+}
+
+form button {
+    display: block;
+    border: none;
+    margin-top: 1em;
+}
+
+.submit-btn {
+    color: white;
+    background-color: #00527A;
+    padding: 1em 4em;
+    font-size: 18px;
+    margin-top: 24px;
+    margin-left: 70px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* checkboxes */
+.checkbox-group {
+    display: inline-block;
+    margin: 2em 0 2em 4em;
+    border-radius: 6px;
+    background-color: #00aaff; 
+    color: white;
+    border: none;
+    font-size: 18px;
+}
+
+.checkbox-button {
+    display: block; 
+    padding: 1em 2em;
+    background-color: #FFD400; 
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.33s;
+    color: #333333; 
+}
+
+.checkbox-group input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox-group input[type="checkbox"]:checked + label {
+    background-color: #00aaff; 
+    color: white;
+}
+
+.checkbox-button:hover {
+    background-color: #FFDA1F; 
+}
+
+#invalid-login {
+    font-size: 16px;
+    margin: 2em 0 1em 4.75em;
+    
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #00527A;
+    color: #FFDA1F;
+    font-size: 20px;
+    padding: 20px;
+    margin-top: 6em;
+}
+
+/* css media queries */
+
+/* Small Screens (up to 600px) */
+@media screen and (max-width: 600px) {
+    html, body {
+        overflow-x: hidden;
+    }
+
+    main {
+        padding: 1em 10%; 
+    }
+
+    nav ul {
+        flex-direction: column; 
+        align-items: center; 
+    }
+    nav ul li {
+        margin-bottom: 10px;
+    }
+
+    nav ul li a {
+        font-size: 24px; 
+    }
+
+    table {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    table th, table td {
+        padding: 4px;
+    }
+
+    form {
+        margin-top: 2em; /* Reduce margin on small screens */
+    }
+
+    .checkbox-group {
+        display: flex;
+        flex-direction: column; 
+        width: 50%;
+    }
+}
+
+/* Medium Screens (601px - 1024px) */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    main {
+        padding: 1em 15%; 
+    }
+
+    .checkbox-group {
+        display: flex;
+        flex-direction: column; 
+        width: 40%;
+    }
+}
+
+/* Large Screens (1025px and above) */
+@media screen and (min-width: 1025px) {
+    main {
+        padding: 1em 20%; 
+    }
+}
+
+#carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    flex: 1;
+    overflow: hidden;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#prevBtn {
+    left: 0;
+}
+
+#nextBtn {
+    right: 0;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+    margin-left: 4em; 
+}
+
+/* Style for each button */
+.submit-btn {
+    flex: 1;
+    color: white;
+    background-color: #00527A;
+    padding: 1em 4em;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 1em; 
+}
+
+.new-user-form {
+    margin-top: 2em; 
+    padding: 2em;
+    border-radius: 6px;
+    box-shadow: 0 0 5px rgba(119, 115, 115, 0.1);
+    clear: both; 
+}
+
+.carousel-image {
+    width: 100%; 
+    max-height: 300px; 
+    object-fit: cover; 
+}
