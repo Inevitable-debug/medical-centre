@@ -1,26 +1,32 @@
-# Medical Centre Full Stack Web Application
+# Medical Centre – Full Stack Booking Web App (PHP)
 
-## Introduction
-This web application features a UI built from HTML & CSS for the styling, and Javascript for the dynamic form validation. There is a booking system that allows the user to book an appointment with a healthcare specialist which leverages regular expression input validation. These appointments are managed by the PhP backend, ensuring no double booking and a secure, easy way to share booking information.
+A simple full-stack web application that lets users register/login and book appointments with healthcare specialists. Built as a practical project focusing on input validation, booking integrity (no double-booking), and clear deployment/troubleshooting steps.
+
+## Highlights
+- **Appointment booking workflow** with server-side checks to prevent **double-booking**
+- **Client-side validation** using JavaScript + regex (fast feedback for users)
+- **Simple persistence** using flat files (`appointments.txt`, `users.txt`, `accessattempts.txt`)
+- Includes **real-world deployment notes** (Apache `.htaccess` / 403 troubleshooting, file permissions)
+
+## Tech Stack
+- Frontend: **HTML, CSS, JavaScript**
+- Backend: **PHP**
+- Hosting: Any **PHP-capable web server** (Apache/Nginx)
+
+## Quick Demo (What to try)
+1. Register a user / log in
+2. Book an appointment (confirm validation blocks bad input)
+3. Try booking the **same slot** again (should be prevented by backend logic)
+4. Verify the booking is recorded (e.g., in `appointments.txt`)
+
+> Tip: Add screenshots to `/screenshots` and link them below to make this repo “instantly scannable” by recruiters.
 
 ## Requirements
-- PHP 8.x (PHP 7.4+
-- Local Web Server (e.g Apache/Nginx for web hosting)
+- PHP **8.x** (compatible with PHP **7.4+**)
+- Local web server (Apache/Nginx) or a PHP-capable host
 
-## Deployment instructions
-
-1. Download / clone the repo and upload the project folder to a PHP-capable web host (Apache/PHP).  
-
-2. Disable the uni auth `.htaccess`** (otherwise you’ll likely get a 403 on normal hosting):
-   - Rename `.htaccess` to `.htaccess.disabled`  
-     or
-   - Edit it and remove/comment the Kerberos + `SSLRequireSSL` rules.
-
-3. Make sure these files exist on the server and are writable by PHP (or bookings/users won’t save):
-   - `appointments.txt`
-   - `users.txt`
-   - `accessattempts.txt`
-
-4. Visit the site:
-   - If uploaded to the web root: `https://your-domain.com/index.php`
-   - If uploaded to a subfolder: `https://your-domain.com/medical-centre/index.php`
+## Deployment (Local)
+### Option A: PHP built-in server (quickest)
+From the project directory:
+```bash
+php -S localhost:8000
